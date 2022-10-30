@@ -492,7 +492,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 45
-  orthographic: 0
+  orthographic: 1
   orthographic size: 10
   m_Depth: -1
   m_CullingMask:
@@ -555,6 +555,53 @@ Transform:
   - {fileID: 425805627}
   m_Father: {fileID: 0}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1388733778
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1388733780}
+  - component: {fileID: 1388733779}
+  m_Layer: 0
+  m_Name: SpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1388733779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388733778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bb467964ca4b5b4e87f8fa277018ed9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalPrefabs:
+  - {fileID: 1721267415982460211, guid: 3d3eb5026e35f3b4bb8e9b7b8a426966, type: 3}
+  - {fileID: 7969488630854669364, guid: c2c9d7d4c22a58f4fb8976bc512313b6, type: 3}
+  - {fileID: 2935202511823451793, guid: 26e31cfc77df1db429d63214fc07ac95, type: 3}
+--- !u!4 &1388733780
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388733778}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1512602417
 PrefabInstance:
