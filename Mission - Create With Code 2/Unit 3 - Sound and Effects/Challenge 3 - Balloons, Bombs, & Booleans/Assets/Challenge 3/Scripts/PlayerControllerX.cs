@@ -17,6 +17,8 @@ public class PlayerControllerX : MonoBehaviour
     public AudioClip moneySound;
     public AudioClip explodeSound;
 
+    private bool isLowEnough = true;
+    private float topBound = 16f;
 
     // Start is called before the first frame update
     void Start()
@@ -34,10 +36,20 @@ public class PlayerControllerX : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // While space is pressed and player is low enough, float up
-        if (Input.GetKey(KeyCode.Space) && !gameOver)
+        if (transform.position.y <= topBound)
         {
-            playerRb.AddForce(Vector3.up * floatForce * Time.deltaTime, ForceMode.Acceleration);
+            isLowEnough = true;
+        }
+        else
+        {
+            playerRb.velocity = Vector3.zero;
+            isLowEnough = false;
+        }
+
+        // While space is pressed and player is low enough, float up
+        if (Input.GetKey(KeyCode.Space) && !gameOver && isLowEnough)
+        {
+            playerRb.AddForce(Vector3.up * floatForce * Time.deltaTime, ForceMode.Force);
         }
     }
 
@@ -51,7 +63,7 @@ public class PlayerControllerX : MonoBehaviour
             gameOver = true;
             Debug.Log("Game Over!");
             Destroy(other.gameObject);
-        } 
+        }
 
         // if player collides with money, fireworks
         else if (other.gameObject.CompareTag("Money"))
