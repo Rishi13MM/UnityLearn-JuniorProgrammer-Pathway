@@ -189,6 +189,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bomb
       objectReference: {fileID: 0}
+    - target: {fileID: 11368019182273911, guid: 1db47c5ef25154fb1806822c25335042,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1db47c5ef25154fb1806822c25335042, type: 3}
 --- !u!1 &170076733
@@ -912,7 +917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOver: 0
-  floatForce: 50
+  floatForce: 2000
   explosionParticle: {fileID: 1171260740}
   fireworksParticle: {fileID: 66121944}
   moneySound: {fileID: 8300000, guid: af9f934eb4288464eb120a5857921cc3, type: 3}
