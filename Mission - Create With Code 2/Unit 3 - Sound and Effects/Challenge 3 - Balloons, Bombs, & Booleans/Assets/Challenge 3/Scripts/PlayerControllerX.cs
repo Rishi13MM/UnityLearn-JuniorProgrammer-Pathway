@@ -16,9 +16,11 @@ public class PlayerControllerX : MonoBehaviour
     private AudioSource playerAudio;
     public AudioClip moneySound;
     public AudioClip explodeSound;
+    public AudioClip bounceSound;
 
     private bool isLowEnough = true;
     private float topBound = 16f;
+    private float bounceForce = 7.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -72,6 +74,13 @@ public class PlayerControllerX : MonoBehaviour
             playerAudio.PlayOneShot(moneySound, 1.0f);
             Destroy(other.gameObject);
 
+        }
+
+        // if player collide with ground, bounce
+        else if (other.gameObject.CompareTag("Ground") && !gameOver)
+        {
+            playerRb.AddForce(Vector3.up * bounceForce, ForceMode.Impulse);
+            playerAudio.PlayOneShot(bounceSound, 1.0f);
         }
 
     }
